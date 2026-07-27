@@ -1,7 +1,6 @@
-import './App.css';
+import "./App.css";
 
 import { Routes, Route } from "react-router-dom";
-
 
 function App() {
   return (
@@ -12,6 +11,7 @@ function App() {
       </Routes>
       <Footer />
     </>
+  );
 }
 
 export default App;

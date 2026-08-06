@@ -7,7 +7,7 @@ export default {
     component: NavBar,
 };
 
-const Template = {args} => (
+const Template = (args) => {
     <Router>
         <nav className="navbar navbar-expand-lg navbar-dark bg-light py-0">
             <div className="container-fluid py-0">
@@ -15,7 +15,7 @@ const Template = {args} => (
             </div>
         </nav>
     </Router>
-);
+};
 
 export const Default = Template.bind({});
 Default.args = {

@@ -19,3 +19,4 @@ export const NavBar = ({ dropDowns = [] }) => {
 NavBar.propTypes = {
   dropDowns: PropTypes.array,
 };
+

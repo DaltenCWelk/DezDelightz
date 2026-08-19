@@ -1,1 +1,11 @@
-export const Logo = () => <img src="/DDLogo.jpg" alt="DezDelightz Logo" />;
+import "./Logo.css";
+
+export const Logo = () => {
+  return (
+    <img
+      src="/DDLogo.jpg"
+      alt="DezDelightz Logo"
+      className="logo"
+    />
+  );
+};

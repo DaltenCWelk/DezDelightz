@@ -1,63 +1,93 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Logo } from "../Logo/Logo";
+import { NavBar } from "../NavBar/NavBar";
 
-export const Header = () => {
+export const Header = ({ dropDowns }) => {
   return (
-    <header>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success shadow-sm">
+    <>
+      <nav className="navbar navbar-expand-lg navbar-dark bg-DDbrown">
         <div className="container">
-
-          {/* Logo */}
-          <Link className="navbar-brand fw-bold" to="/">
-            🌿 DezDelightz
+          <Link
+            className="navbar-brand d-flex fw-bold align-items-center"
+            to="/"
+          >
+            <Logo />
+            <span className="ms-2 fw-bold">Dez Delightz</span>
           </Link>
-
-          {/* Mobile Menu Button */}
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#mainNavbar"
-            aria-controls="mainNavbar"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-
-          {/* Navigation */}
-          <div className="collapse navbar-collapse" id="mainNavbar">
-            <ul className="navbar-nav ms-auto">
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/">
-                  Home
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/shop">
-                  Shop
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/about">
-                  About
-                </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
-                </Link>
-              </li>
-
-            </ul>
-          </div>
-
+          <NavBar
+            items={[
+              {
+                type: "link",
+                pathName: "Home",
+                path: "/",
+              },
+              {
+                type: "link",
+                pathName: "Portfolio",
+                path: "/portfolio",
+              },
+              {
+                type: "dropdown",
+                pathName: "Services",
+                links: [
+                  {
+                    title: "Website Design",
+                    path: "/services/WebDesign",
+                  },
+                  {
+                    title: "Software Development",
+                    path: "/services/software-development",
+                  },
+                ],
+              },
+              {
+                type: "dropdown",
+                pathName: "Shop",
+                links: [
+                  {
+                    title: "Ceramics",
+                    path: "/shop/ceramics",
+                  },
+                  {
+                    title: "Art",
+                    path: "/shop/art",
+                  },
+                  {
+                    title: "Plants",
+                    path: "/shop/plants",
+                  },
+                ],
+              },
+              {
+                type: "dropdown",
+                pathName: "Info",
+                links: [
+                  {
+                    title: "About Me",
+                    path: "/about",
+                  },
+                  {
+                    title: "Contact Me",
+                    path: "/contact",
+                  },
+                ],
+              },
+            ]}
+          />
         </div>
       </nav>
-    </header>
+    </>
   );
 };

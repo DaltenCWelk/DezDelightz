@@ -1,7 +1,7 @@
 import React from "react";
 import { CategoryCard } from "../CategoryCard/CategoryCard";
 
-export const CategorySection = () => {
+export const CategorySection = ({ children }) => {
   const categories = [
     {
       name: "Ceramics",
@@ -16,7 +16,7 @@ export const CategorySection = () => {
       path: "/shop/plants",
     },
     {
-      name: "Software Development",
+      name: "SoftwareDev",
       path: "/services/software-development",
     },
   ];
@@ -39,8 +39,11 @@ export const CategorySection = () => {
           </div>
         ))}
       </div>
+      {children}
     </section>
   );
 };
+
+
 
 export default CategorySection;

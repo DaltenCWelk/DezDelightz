@@ -40,3 +40,14 @@
 .bg-DDbrown {
   background-color: #6F4E37;
 }
+
+.product-slider {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.product-card {
+  flex: 0 0 250px;
+}
